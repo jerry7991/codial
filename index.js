@@ -1,6 +1,10 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+
+//  use express router
+app.use('/', require('./routers'))
+
 app.listen(port, function (err)
 {
     if (err) {
@@ -8,4 +12,4 @@ app.listen(port, function (err)
         return;
     }
     console.log(`cool! server is running on the port number : ${port}`);
-});v
+});
