@@ -3,7 +3,20 @@ const port = 8000;
 const app = express();
 
 //  use express router
-app.use('/', require('./routers'))
+
+//  Any request comming at local host all request will handle throgh routers
+app.use('/', require('./routers'));
+
+// Fo any further routers, access from here like
+//  router.use('/routerName',require('./routerFile'));
+
+
+//  Set the view engine as ejs
+app.set('view engine', 'ejs');
+
+//  Provide directory to ejs
+app.set('views', './views');
+
 
 app.listen(port, function (err)
 {
